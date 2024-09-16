@@ -5,13 +5,15 @@ const shelve = document.querySelector('.main-container');
 const myLibrary = [];
 
 
-function Book (title, author, pages, status) {
-this.title = title,
-this.author = author,
-this.pages = pages,
-this.status = status,
-this.card = function () {
-    
+class Book {
+    constructor(title, author, pages, status) {
+        this.title = title;
+        this.author = author;
+        this.pages = pages;
+        this.status = status;
+    }
+
+    card () {
         let card = document.createElement('div');
         let bookDetail = document.createElement('div');
         let bookStatus = document.createElement('div');
@@ -102,7 +104,7 @@ this.card = function () {
         card.appendChild(bookDetail);
         card.appendChild(bookStatus);
         shelve.appendChild(card);
-}
+    }
 }
 
 
